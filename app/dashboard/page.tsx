@@ -15,30 +15,6 @@ import Typography from '@mui/material/Typography';
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
-const data1 = [
-  { 
-    name: "Bulbasaur", 
-    number: 1, 
-    link: <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=53ac1624cd8f27e5fc927368a07aff1c&camp=1789&creative=9325&index=toys-and-games&keywords=Bulbasaur">Bulbasaur</a> 
-  },
-  { 
-    name: "Ivysaur", 
-    number: 2, 
-    link: <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=5c6c2e5acc9061801d9464eb0bf0f0d0&camp=1789&creative=9325&index=toys-and-games&keywords=Ivysaur">Ivysaur</a> 
-  },
-  { 
-    name: "Venasaur", 
-    number: 3, 
-    link: <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=caef3a0297b803ea478e427191df7f1b&camp=1789&creative=9325&index=toys-and-games&keywords=Venasaur">Venasaur</a>
-  },
-  { 
-    name: "Charmander", 
-    number: 4, 
-    link: <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=4c0f3d5e629376718fa2d442233db2f4&camp=1789&creative=9325&index=toys-and-games&keywords=Charmander">Charmander</a>
-  },
-]
-
-
 function createData(
   name: string,
   number: number,
@@ -68,6 +44,18 @@ const rows = [
     4, 
     <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=f904ae894ec9701d8fb396a5d4b100dd&camp=1789&creative=9325&index=toys-and-games&keywords=Charmander">Charmander</a>
   ),
+  createData(
+    "Charmeleon", 
+    5, 
+    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=ddb23c18ec5560e9bd5d51a6e961f9e1&camp=1789&creative=9325&index=toys-and-games&keywords=Charmeleon">Charmeleon</a>
+  ),
+  createData(
+    "Charizard", 
+    6, 
+    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=f7d25890175c0d8bda5973bfa8c16314&camp=1789&creative=9325&index=toys-and-games&keywords=Charizard">Charizard</a>
+  ),
+
+  
 ];
 
 interface TabPanelProps {
@@ -95,6 +83,7 @@ function TabPanel(props: TabPanelProps) {
     </div>
   );
 }
+
 
 function a11yProps(index: number) {
   return {
@@ -130,6 +119,8 @@ export default function Page() {
           <Tab label="Generation 5" {...a11yProps(4)} />
           <Tab label="Generation 6" {...a11yProps(5)} />
           <Tab label="Generation 7" {...a11yProps(6)} />
+          <Tab label="Generation 8" {...a11yProps(7)} />
+          <Tab label="Generation 9" {...a11yProps(8)} />
         </Tabs>
         <TabPanel value={value} index={0}>
           <TableContainer component={Paper}>
