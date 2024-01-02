@@ -79,260 +79,254 @@ export default function Page() {
   };
 
   return (
-        <Box
-          sx={{ flexGrow: 1, bgcolor: 'darkgrey', display: 'flex'}}
-        >
-          <Grid container spacing={2}>
-            <Grid xs={12} md={5} lg={4}>
-              <Grid>
-                <Tabs
-                  orientation="vertical"
-                  variant="scrollable"
-                  value={value}
-                  onChange={handleChange}
-                  aria-label="Vertical tabs example"
-                  sx={{ borderRight: 1, borderColor: 'divider' , bgcolor: 'floralwhite'}}
-                >
-                  <Tab label="Generation 1" {...a11yProps(0)} />
-                  <Tab label="Generation 2" {...a11yProps(1)} />
-                  <Tab label="Generation 3" {...a11yProps(2)} />
-                  <Tab label="Generation 4" {...a11yProps(3)} />
-                  <Tab label="Generation 5" {...a11yProps(4)} />
-                  <Tab label="Generation 6" {...a11yProps(5)} />
-                  <Tab label="Generation 7" {...a11yProps(6)} />
-                  <Tab label="Generation 8" {...a11yProps(7)} />
-                  <Tab label="Generation 9" {...a11yProps(8)} />
-                </Tabs>
-              </Grid>
-              <Grid>
-                <TabPanel value={value} index={0}>
-                  <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Pokemon</TableCell>
-                          <TableCell align="right">Number</TableCell>
-                          <TableCell align="right">Link</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {data1.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                          >
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.number}</TableCell>
-                            <TableCell align="right">
-                              <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Pokemon</TableCell>
-                          <TableCell align="right">Number</TableCell>
-                          <TableCell align="right">Link</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {data1.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                          >
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.number}</TableCell>
-                            <TableCell align="right">
-                              <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Pokemon</TableCell>
-                          <TableCell align="right">Number</TableCell>
-                          <TableCell align="right">Link</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {data1.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                          >
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.number}</TableCell>
-                            <TableCell align="right">
-                              <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </TabPanel>
-                <TabPanel value={value} index={3}>
-                <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Pokemon</TableCell>
-                          <TableCell align="right">Number</TableCell>
-                          <TableCell align="right">Link</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {data1.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                          >
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.number}</TableCell>
-                            <TableCell align="right">
-                              <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </TabPanel>
-                <TabPanel value={value} index={4}>
-                <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Pokemon</TableCell>
-                          <TableCell align="right">Number</TableCell>
-                          <TableCell align="right">Link</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {data1.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                          >
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.number}</TableCell>
-                            <TableCell align="right">
-                              <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </TabPanel>
-                <TabPanel value={value} index={5}>
-                <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Pokemon</TableCell>
-                          <TableCell align="right">Number</TableCell>
-                          <TableCell align="right">Link</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {data1.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                          >
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.number}</TableCell>
-                            <TableCell align="right">
-                              <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </TabPanel>
-                <TabPanel value={value} index={6}>
-                <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Pokemon</TableCell>
-                          <TableCell align="right">Number</TableCell>
-                          <TableCell align="right">Link</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {data1.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                          >
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.number}</TableCell>
-                            <TableCell align="right">
-                              <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </TabPanel>
-              </Grid>
-            </Grid>
-            <Grid 
-              container 
-              xs={12} 
-              alignItems="center"
-              flexDirection={{ xs: 'column', sm: 'row' }}
-            >
-              <BottomNavigation
-                showLabels
+    <div>
+      <Box
+        sx={{ flexGrow: 1, bgcolor: 'darkgrey', display: 'flex'}}
+      >
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+              <Tabs
+                orientation="vertical"
+                variant="scrollable"
                 value={value}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
-                }}
-                sx={{ bgcolor: 'black'}}
+                onChange={handleChange}
+                aria-label="Vertical tabs example"
+                sx={{ borderRight: 1, borderColor: 'divider' , bgcolor: 'floralwhite'}}
               >
-                <BottomNavigationAction label="Home" href="/"/>
-                {/* <BottomNavigationAction label="Favorites" />
-                <BottomNavigationAction label="Nearby" /> */}
-              </BottomNavigation>
+                <Tab label="Generation 1" {...a11yProps(0)} />
+                <Tab label="Generation 2" {...a11yProps(1)} />
+                <Tab label="Generation 3" {...a11yProps(2)} />
+                <Tab label="Generation 4" {...a11yProps(3)} />
+                <Tab label="Generation 5" {...a11yProps(4)} />
+                <Tab label="Generation 6" {...a11yProps(5)} />
+                <Tab label="Generation 7" {...a11yProps(6)} />
+                <Tab label="Generation 8" {...a11yProps(7)} />
+                <Tab label="Generation 9" {...a11yProps(8)} />
+              </Tabs>
+            </Grid>
+            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+              <TabPanel value={value} index={0}>
+                <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Pokemon</TableCell>
+                        <TableCell align="right">Number</TableCell>
+                        <TableCell align="right">Link</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data1.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.number}</TableCell>
+                          <TableCell align="right">
+                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+              <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Pokemon</TableCell>
+                        <TableCell align="right">Number</TableCell>
+                        <TableCell align="right">Link</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data1.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.number}</TableCell>
+                          <TableCell align="right">
+                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+              <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Pokemon</TableCell>
+                        <TableCell align="right">Number</TableCell>
+                        <TableCell align="right">Link</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data1.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.number}</TableCell>
+                          <TableCell align="right">
+                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </TabPanel>
+              <TabPanel value={value} index={3}>
+              <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Pokemon</TableCell>
+                        <TableCell align="right">Number</TableCell>
+                        <TableCell align="right">Link</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data1.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.number}</TableCell>
+                          <TableCell align="right">
+                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </TabPanel>
+              <TabPanel value={value} index={4}>
+              <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Pokemon</TableCell>
+                        <TableCell align="right">Number</TableCell>
+                        <TableCell align="right">Link</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data1.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.number}</TableCell>
+                          <TableCell align="right">
+                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </TabPanel>
+              <TabPanel value={value} index={5}>
+              <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Pokemon</TableCell>
+                        <TableCell align="right">Number</TableCell>
+                        <TableCell align="right">Link</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data1.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.number}</TableCell>
+                          <TableCell align="right">
+                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </TabPanel>
+              <TabPanel value={value} index={6}>
+              <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Pokemon</TableCell>
+                        <TableCell align="right">Number</TableCell>
+                        <TableCell align="right">Link</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data1.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.number}</TableCell>
+                          <TableCell align="right">
+                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </TabPanel>
             </Grid>
           </Grid>
           
-          
-          
-        </Box>
+        </Grid>
+        
+      </Box>
+      <BottomNavigation
+        showLabels
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        sx={{ bgcolor: 'black'}}
+      >
+        <BottomNavigationAction label="Home" href="/"/>
+        {/* <BottomNavigationAction label="Favorites" />
+        <BottomNavigationAction label="Nearby" /> */}
+      </BottomNavigation>
+    </div>
   );
 }
