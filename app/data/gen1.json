@@ -51,8 +51,63 @@
     },
     {
         "name": "Metapod", 
-        "number": 10, 
+        "number": 11, 
         "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=65c6c6bf987f72a97ebe9f68f6f3bf49&camp=1789&creative=9325&index=toys-and-games&keywords=Metapod"
+    },
+    {
+        "name": "Butterfree", 
+        "number": 12, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=8d18659e8228316679e0568d1bca35e2&camp=1789&creative=9325&index=toys-and-games&keywords=Butterfree"
+    },
+    {
+        "name": "Weedle", 
+        "number": 13, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=ff0077c947e722a933d9e69e601e2c66&camp=1789&creative=9325&index=toys-and-games&keywords=Weedle"
+    },
+    {
+        "name": "Kakuna", 
+        "number": 14, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=d7b40cb9d57a5b625e925f47b47722e7&camp=1789&creative=9325&index=toys-and-games&keywords=Kakuna"
+    },
+    {
+        "name": "Beedrill", 
+        "number": 15, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=6504b706acfd9d76767b368301233473&camp=1789&creative=9325&index=toys-and-games&keywords=Beedrill"
+    },
+    {
+        "name": "Pidgey", 
+        "number": 16, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=43969f23f6af5b869a0c1bf075f106dd&camp=1789&creative=9325&index=toys-and-games&keywords=Pidgey"
+    },
+    {
+        "name": "Pidgeotto", 
+        "number": 17, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=81133c2998b130617e5a487d34b32a0f&camp=1789&creative=9325&index=toys-and-games&keywords=Pidgeotto"
+    },
+    {
+        "name": "Pidgeot", 
+        "number": 18, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=dad4be4c6d41514cb37892e325441c60&camp=1789&creative=9325&index=toys-and-games&keywords=Pidgeot"
+    },
+    {
+        "name": "Rattata", 
+        "number": 19, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=011075ad391331252e0aeadde51314df&camp=1789&creative=9325&index=toys-and-games&keywords=Rattata"
+    },
+    {
+        "name": "Alolan Ratta", 
+        "number": 19, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=006bc176b7e85675683e57702beba562&camp=1789&creative=9325&index=toys-and-games&keywords=Alolan Rattata"
+    },
+    {
+        "name": "Raticate", 
+        "number": 20, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=9d05100d6b16b3ba61a644a096227dd2&camp=1789&creative=9325&index=toys-and-games&keywords=Raticate"
+    },
+    {
+        "name": "Alolan Raticate", 
+        "number": 20, 
+        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=e864a9bd2d5fb1f9830012b2c5195482&camp=1789&creative=9325&index=toys-and-games&keywords=Alolan Raticate"
     }
     
   ]
