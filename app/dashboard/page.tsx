@@ -14,62 +14,26 @@ import Tab from "@mui/material/Tab";
 import Typography from '@mui/material/Typography';
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import gen1data from '../data/gen1.json';
+import Link from "next/link";
 
 function createData(
   name: string,
   number: number,
-  link: React.JSX.Element
+  link: string
 ) {
-  return { name, number, link};
+  return { name, number, link };
 }
 
-const rows = [
-  createData(
-    "Bulbasaur", 
-    1, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=53ac1624cd8f27e5fc927368a07aff1c&camp=1789&creative=9325&index=toys-and-games&keywords=Bulbasaur">Bulbasaur</a> 
-  ),
-  createData(
-    "Ivysaur", 
-    2, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=5c6c2e5acc9061801d9464eb0bf0f0d0&camp=1789&creative=9325&index=toys-and-games&keywords=Ivysaur">Ivysaur</a> 
-  ),
-  createData(
-    "Venasaur", 
-    3, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=caef3a0297b803ea478e427191df7f1b&camp=1789&creative=9325&index=toys-and-games&keywords=Venasaur">Venasaur</a> 
-  ),
-  createData(
-    "Charmandar", 
-    4, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=f904ae894ec9701d8fb396a5d4b100dd&camp=1789&creative=9325&index=toys-and-games&keywords=Charmander">Charmander</a>
-  ),
-  createData(
-    "Charmeleon", 
-    5, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=ddb23c18ec5560e9bd5d51a6e961f9e1&camp=1789&creative=9325&index=toys-and-games&keywords=Charmeleon">Charmeleon</a>
-  ),
-  createData(
-    "Charizard", 
-    6, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=f7d25890175c0d8bda5973bfa8c16314&camp=1789&creative=9325&index=toys-and-games&keywords=Charizard">Charizard</a>
-  ),
-  createData(
-    "Squirtle", 
-    7, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=d4624eb0d1fb00e69d83abc6d0c66025&camp=1789&creative=9325&index=toys-and-games&keywords=Squirtle">Squirtle</a>
-  ),
-  createData(
-    "Wartortle", 
-    8, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=46c879b96eb93837d25439a8223bf6f4&camp=1789&creative=9325&index=toys-and-games&keywords=Wartortle">Wartortle</a>
-  ),
-  createData(
-    "Blastoise", 
-    9, 
-    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=af52dd5fa558301c968e83380734ab8c&camp=1789&creative=9325&index=toys-and-games&keywords=Blastoise">Blastoise</a>
-  ),
-];
+function createDataArr() {
+  var rows = []
+  for (var i in gen1data) {
+    rows.push(createData(gen1data[i].name, gen1data[i].number, gen1data[i].link));
+  }
+  return rows;
+}
+
+const data1 = createDataArr();
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -79,7 +43,7 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
-
+  createDataArr();
   return (
     <div
       role="tabpanel"
@@ -146,7 +110,7 @@ export default function Page() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row) => (
+                {data1.map((row) => (
                   <TableRow
                     key={row.name}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -155,7 +119,9 @@ export default function Page() {
                       {row.name}
                     </TableCell>
                     <TableCell align="right">{row.number}</TableCell>
-                    <TableCell align="right">{row.link}</TableCell>
+                    <TableCell align="right">
+                      <Link href={`${row.link}`}>{row.name}</Link>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
