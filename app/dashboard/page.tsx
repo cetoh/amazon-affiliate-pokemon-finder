@@ -54,8 +54,21 @@ const rows = [
     6, 
     <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=f7d25890175c0d8bda5973bfa8c16314&camp=1789&creative=9325&index=toys-and-games&keywords=Charizard">Charizard</a>
   ),
-
-  
+  createData(
+    "Squirtle", 
+    7, 
+    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=d4624eb0d1fb00e69d83abc6d0c66025&camp=1789&creative=9325&index=toys-and-games&keywords=Squirtle">Squirtle</a>
+  ),
+  createData(
+    "Wartortle", 
+    8, 
+    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=46c879b96eb93837d25439a8223bf6f4&camp=1789&creative=9325&index=toys-and-games&keywords=Wartortle">Wartortle</a>
+  ),
+  createData(
+    "Blastoise", 
+    9, 
+    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=af52dd5fa558301c968e83380734ab8c&camp=1789&creative=9325&index=toys-and-games&keywords=Blastoise">Blastoise</a>
+  ),
 ];
 
 interface TabPanelProps {
