@@ -18,8 +18,10 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Link from "next/link";
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
-import gen1data from '../data/gen1.json';
-import gen2data from '../data/gen2.json';
+import pokedex from '../data/pokedex.json';
+
+const baseUrl = "https://www.amazon.com/gp/search?ie=UTF8";
+const affiliateTag = "tohtaltech-20";
 
 function createData(
   name: string,
@@ -31,37 +33,101 @@ function createData(
 
 function createDataArr1() {
   var rows = []
-  for (var i in gen1data) {
-    rows.push(createData(gen1data[i].name, gen1data[i].number, gen1data[i].link));
+  for (var i in pokedex) {
+    var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+    //account for Haunter
+    if (pokedex[i].name.english == "Haunter")
+      link = baseUrl.concat("&keywords=Pokemon+", pokedex[i].name.english, "&tag=", affiliateTag);
+
+    if (pokedex[i].name.english == "Chikorita")
+      break;
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
   }
   return rows;
 }
 
 function createDataArr2() {
   var rows = []
-  for (var i in gen2data) {
-    rows.push(createData(gen2data[i].name, gen2data[i].number, gen2data[i].link));
+  for (let i = 151; i < 251; i++) {
+    var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
   }
   return rows;
 }
 
 function createDataArr3() {
   var rows = []
-  for (var i in gen2data) {
-    rows.push(createData(gen2data[i].name, gen2data[i].number, gen2data[i].link));
+  for (let i = 251; i < 386; i++) {
+    var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
   }
+  return rows;
+}
+
+function createDataArr4() {
+  var rows = []
+  for (let i = 386; i < 493; i++) {
+    var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+  }
+  return rows;
+}
+
+function createDataArr5() {
+  var rows = []
+  for (let i = 493; i < 649; i++) {
+    var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+  }
+  return rows;
+}
+
+function createDataArr6() {
+  var rows = []
+  for (let i = 649; i < 721; i++) {
+    var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+  }
+  return rows;
+}
+
+function createDataArr7() {
+  var rows = []
+  for (let i = 721; i < 809; i++) {
+    var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+  }
+  return rows;
+}
+
+function createDataArr8() {
+  var rows = []
+  for (let i = 809; i < 898; i++) {
+    var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+  }
+  return rows;
+}
+
+function createDataArr9() {
+  var rows = []
+  // for (let i = 905; i < 1025; i++) {
+  //   var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
+  //   rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+  // }
+  rows.push("Upcoming Pokemon NOT yet Released", 1025, baseUrl.concat("&keywords=", "pokemon", "&tag=", affiliateTag));
   return rows;
 }
 
 const data1 = createDataArr1();
 const data2 = createDataArr2();
 const data3 = createDataArr3();
-const data4 = createDataArr2();
-const data5 = createDataArr2();
-const data6 = createDataArr2();
-const data7 = createDataArr2();
-const data8 = createDataArr2();
-const data9 = createDataArr2();
+const data4 = createDataArr4();
+const data5 = createDataArr5();
+const data6 = createDataArr6();
+const data7 = createDataArr7();
+const data8 = createDataArr8();
+const data9 = createDataArr9();
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -229,7 +295,7 @@ export default function Page() {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {data1.map((row) => (
+                      {data4.map((row) => (
                         <TableRow
                           key={row.name}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -258,7 +324,7 @@ export default function Page() {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {data1.map((row) => (
+                      {data5.map((row) => (
                         <TableRow
                           key={row.name}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -287,7 +353,7 @@ export default function Page() {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {data1.map((row) => (
+                      {data6.map((row) => (
                         <TableRow
                           key={row.name}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -316,7 +382,36 @@ export default function Page() {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {data1.map((row) => (
+                      {data7.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.number}</TableCell>
+                          <TableCell align="right">
+                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </TabPanel>
+              <TabPanel value={value} index={7}>
+              <TableContainer component={Paper}>
+                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Pokemon</TableCell>
+                        <TableCell align="right">Number</TableCell>
+                        <TableCell align="right">Link</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data8.map((row) => (
                         <TableRow
                           key={row.name}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
