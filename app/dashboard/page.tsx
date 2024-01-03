@@ -15,9 +15,11 @@ import Tab from "@mui/material/Tab";
 import Typography from '@mui/material/Typography';
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import gen1data from '../data/gen1.json';
 import Link from "next/link";
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+
+import gen1data from '../data/gen1.json';
+import gen2data from '../data/gen2.json';
 
 function createData(
   name: string,
@@ -27,7 +29,7 @@ function createData(
   return { name, number, link };
 }
 
-function createDataArr() {
+function createDataArr1() {
   var rows = []
   for (var i in gen1data) {
     rows.push(createData(gen1data[i].name, gen1data[i].number, gen1data[i].link));
@@ -35,7 +37,31 @@ function createDataArr() {
   return rows;
 }
 
-const data1 = createDataArr();
+function createDataArr2() {
+  var rows = []
+  for (var i in gen2data) {
+    rows.push(createData(gen2data[i].name, gen2data[i].number, gen2data[i].link));
+  }
+  return rows;
+}
+
+function createDataArr3() {
+  var rows = []
+  for (var i in gen2data) {
+    rows.push(createData(gen2data[i].name, gen2data[i].number, gen2data[i].link));
+  }
+  return rows;
+}
+
+const data1 = createDataArr1();
+const data2 = createDataArr2();
+const data3 = createDataArr3();
+const data4 = createDataArr2();
+const data5 = createDataArr2();
+const data6 = createDataArr2();
+const data7 = createDataArr2();
+const data8 = createDataArr2();
+const data9 = createDataArr2();
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -45,7 +71,6 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
-  createDataArr();
   return (
     <div
       role="tabpanel"
@@ -146,7 +171,7 @@ export default function Page() {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {data1.map((row) => (
+                      {data2.map((row) => (
                         <TableRow
                           key={row.name}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -175,7 +200,7 @@ export default function Page() {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {data1.map((row) => (
+                      {data3.map((row) => (
                         <TableRow
                           key={row.name}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

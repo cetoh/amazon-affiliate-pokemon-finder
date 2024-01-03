@@ -1,22 +1,22 @@
 [
     {
-        "name": "Bulbasaur", 
-        "number": 1, 
+        "name": "Chikorita", 
+        "number": 152, 
         "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=53ac1624cd8f27e5fc927368a07aff1c&camp=1789&creative=9325&index=toys-and-games&keywords=Bulbasaur"
     },
     {
         "name": "Ivysaur", 
-        "number": 2, 
+        "number": 153, 
         "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=5c6c2e5acc9061801d9464eb0bf0f0d0&camp=1789&creative=9325&index=toys-and-games&keywords=Ivysaur"
     },
     {
         "name": "Venasaur", 
-        "number": 3, 
+        "number": 154, 
         "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=caef3a0297b803ea478e427191df7f1b&camp=1789&creative=9325&index=toys-and-games&keywords=Venasaur"
     },
     {
         "name": "Charmandar", 
-        "number": 4, 
+        "number": 155, 
         "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=f904ae894ec9701d8fb396a5d4b100dd&camp=1789&creative=9325&index=toys-and-games&keywords=Charmander"
     },
     {
@@ -108,30 +108,6 @@
         "name": "Alolan Raticate", 
         "number": 20, 
         "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=e864a9bd2d5fb1f9830012b2c5195482&camp=1789&creative=9325&index=toys-and-games&keywords=Alolan Raticate"
-    },
-    {
-        "name": "Spearow", 
-        "number": 21, 
-        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=4508b7bab1af1959d83d9e219574e368&camp=1789&creative=9325&index=toys-and-games&keywords=Spearow"
-    },
-    {
-        "name": "Fearow", 
-        "number": 22, 
-        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=f8336c9093e32981e15886a7ea263a58&camp=1789&creative=9325&index=toys-and-games&keywords=Fearow"
-    },
-    {
-        "name": "Ekans", 
-        "number": 23, 
-        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=ae7ad677d4f291261639936ddbc39d60&camp=1789&creative=9325&index=toys-and-games&keywords=Ekans"
-    },
-    {
-        "name": "Arbok", 
-        "number": 24, 
-        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=33379d4ed52fad12645f991749bb3520&camp=1789&creative=9325&index=toys-and-games&keywords=Arbok"
-    },
-    {
-        "name": "Pikachu", 
-        "number": 25, 
-        "link": "https://www.amazon.com/gp/search?ie=UTF8&tag=tohtaltech-20&linkCode=ur2&linkId=779a9c15ebb558d397fbe145c4255275&camp=1789&creative=9325&index=toys-and-games&keywords=Pikachu"
     }
+    
   ]
