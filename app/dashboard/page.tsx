@@ -27,9 +27,23 @@ const affiliateTag = "tohtaltech-20";
 function createData(
   name: string,
   number: number,
-  link: string
+  link: string,
+  imagePath: string
 ) {
-  return { name, number, link };
+  return { name, number, link, imagePath };
+}
+
+function paddy(num: number, padlen: number, padchar: string) {
+  var pad_char = typeof padchar !== 'undefined' ? padchar : '0';
+  var pad = new Array(1 + padlen).join(pad_char);
+  return (pad + num).slice(-pad.length);
+}
+
+function createImagePath(
+  number: number
+) {
+  var path = "/img/" + paddy(number, 3, "0") + ".png";
+  return path;
 }
 
 function createDataArr1() {
@@ -42,7 +56,7 @@ function createDataArr1() {
 
     if (pokedex[i].name.english == "Chikorita")
       break;
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
   }
   return rows;
 }
@@ -51,7 +65,7 @@ function createDataArr2() {
   var rows = []
   for (let i = 151; i < 251; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
   }
   return rows;
 }
@@ -60,7 +74,7 @@ function createDataArr3() {
   var rows = []
   for (let i = 251; i < 386; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
   }
   return rows;
 }
@@ -69,7 +83,7 @@ function createDataArr4() {
   var rows = []
   for (let i = 386; i < 493; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
   }
   return rows;
 }
@@ -78,7 +92,7 @@ function createDataArr5() {
   var rows = []
   for (let i = 493; i < 649; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
   }
   return rows;
 }
@@ -87,7 +101,7 @@ function createDataArr6() {
   var rows = []
   for (let i = 649; i < 721; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
   }
   return rows;
 }
@@ -96,7 +110,7 @@ function createDataArr7() {
   var rows = []
   for (let i = 721; i < 809; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
   }
   return rows;
 }
@@ -105,7 +119,7 @@ function createDataArr8() {
   var rows = []
   for (let i = 809; i < 898; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
   }
   return rows;
 }
@@ -216,7 +230,7 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src="/img/001MS.png" />
+                            <Avatar alt={row.name} src={row.imagePath} />
                           </TableCell>
                           <TableCell>
                             {row.name}
@@ -236,6 +250,7 @@ export default function Page() {
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
                     <TableHead>
                       <TableRow>
+                        <TableCell></TableCell>
                         <TableCell>Pokemon</TableCell>
                         <TableCell align="right">Number</TableCell>
                         <TableCell align="right">Link</TableCell>
@@ -248,6 +263,9 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
+                            <Avatar alt={row.name} src={row.imagePath} />
+                          </TableCell>
+                          <TableCell>
                             {row.name}
                           </TableCell>
                           <TableCell align="right">{row.number}</TableCell>
@@ -265,6 +283,7 @@ export default function Page() {
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
                     <TableHead>
                       <TableRow>
+                        <TableCell></TableCell>
                         <TableCell>Pokemon</TableCell>
                         <TableCell align="right">Number</TableCell>
                         <TableCell align="right">Link</TableCell>
@@ -277,6 +296,9 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
+                            <Avatar alt={row.name} src={row.imagePath} />
+                          </TableCell>
+                          <TableCell>
                             {row.name}
                           </TableCell>
                           <TableCell align="right">{row.number}</TableCell>
@@ -294,6 +316,7 @@ export default function Page() {
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
                     <TableHead>
                       <TableRow>
+                        <TableCell></TableCell>
                         <TableCell>Pokemon</TableCell>
                         <TableCell align="right">Number</TableCell>
                         <TableCell align="right">Link</TableCell>
@@ -306,6 +329,9 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
+                            <Avatar alt={row.name} src={row.imagePath} />
+                          </TableCell>
+                          <TableCell>
                             {row.name}
                           </TableCell>
                           <TableCell align="right">{row.number}</TableCell>
@@ -323,6 +349,7 @@ export default function Page() {
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
                     <TableHead>
                       <TableRow>
+                        <TableCell></TableCell>
                         <TableCell>Pokemon</TableCell>
                         <TableCell align="right">Number</TableCell>
                         <TableCell align="right">Link</TableCell>
@@ -335,6 +362,9 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
+                            <Avatar alt={row.name} src={row.imagePath} />
+                          </TableCell>
+                          <TableCell>
                             {row.name}
                           </TableCell>
                           <TableCell align="right">{row.number}</TableCell>
@@ -352,6 +382,7 @@ export default function Page() {
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
                     <TableHead>
                       <TableRow>
+                        <TableCell></TableCell>
                         <TableCell>Pokemon</TableCell>
                         <TableCell align="right">Number</TableCell>
                         <TableCell align="right">Link</TableCell>
@@ -364,6 +395,9 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
+                            <Avatar alt={row.name} src={row.imagePath} />
+                          </TableCell>
+                          <TableCell>
                             {row.name}
                           </TableCell>
                           <TableCell align="right">{row.number}</TableCell>
@@ -381,6 +415,7 @@ export default function Page() {
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
                     <TableHead>
                       <TableRow>
+                        <TableCell></TableCell>
                         <TableCell>Pokemon</TableCell>
                         <TableCell align="right">Number</TableCell>
                         <TableCell align="right">Link</TableCell>
@@ -393,6 +428,9 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
+                            <Avatar alt={row.name} src={row.imagePath} />
+                          </TableCell>
+                          <TableCell>
                             {row.name}
                           </TableCell>
                           <TableCell align="right">{row.number}</TableCell>
@@ -410,6 +448,7 @@ export default function Page() {
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
                     <TableHead>
                       <TableRow>
+                        <TableCell></TableCell>
                         <TableCell>Pokemon</TableCell>
                         <TableCell align="right">Number</TableCell>
                         <TableCell align="right">Link</TableCell>
@@ -422,6 +461,9 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
+                            <Avatar alt={row.name} src={row.imagePath} />
+                          </TableCell>
+                          <TableCell>
                             {row.name}
                           </TableCell>
                           <TableCell align="right">{row.number}</TableCell>
