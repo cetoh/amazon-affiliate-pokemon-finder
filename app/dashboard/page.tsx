@@ -17,8 +17,10 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Link from "next/link";
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import Avatar from "@mui/material/Avatar";
 
 import pokedex from '../data/pokedex.json';
+import bulbasaur from '../images/001MS.png'
 
 const baseUrl = "https://www.amazon.com/gp/search?ie=UTF8";
 const affiliateTag = "tohtaltech-20";
@@ -202,6 +204,7 @@ export default function Page() {
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
                     <TableHead>
                       <TableRow>
+                        <TableCell></TableCell>
                         <TableCell>Pokemon</TableCell>
                         <TableCell align="right">Number</TableCell>
                         <TableCell align="right">Link</TableCell>
@@ -214,6 +217,9 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
+                            <Avatar alt={row.name} src={bulbasaur} />
+                          </TableCell>
+                          <TableCell>
                             {row.name}
                           </TableCell>
                           <TableCell align="right">{row.number}</TableCell>
