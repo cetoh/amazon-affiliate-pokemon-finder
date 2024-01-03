@@ -20,7 +20,6 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Avatar from "@mui/material/Avatar";
 
 import pokedex from '../data/pokedex.json';
-import bulbasaur from '../images/001MS.png'
 
 const baseUrl = "https://www.amazon.com/gp/search?ie=UTF8";
 const affiliateTag = "tohtaltech-20";
@@ -217,7 +216,7 @@ export default function Page() {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={bulbasaur} />
+                            <Avatar alt={row.name} src="/img/001MS.png" />
                           </TableCell>
                           <TableCell>
                             {row.name}
