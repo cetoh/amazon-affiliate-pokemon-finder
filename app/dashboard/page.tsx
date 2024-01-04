@@ -21,6 +21,9 @@ import Avatar from "@mui/material/Avatar";
 
 import pokedex from '../data/pokedex.json';
 
+import { PokemonClient } from 'pokenode-ts';
+
+
 const baseUrl = "https://www.amazon.com/gp/search?ie=UTF8";
 const affiliateTag = "tohtaltech-20";
 
@@ -48,7 +51,9 @@ function createImagePath(
 
 function createDataArr1() {
   var rows = []
-  for (var i in pokedex) {
+  for (let i = 0; i < 151; i++) {
+    
+    
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
     //account for Haunter
     if (pokedex[i].name.english == "Haunter")
@@ -185,7 +190,7 @@ export default function Page() {
   };
 
   return (
-    <div>
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <Box
         sx={{ flexGrow: 1, bgcolor: 'darkgrey', display: 'flex'}}
       >
@@ -482,6 +487,7 @@ export default function Page() {
         </Grid>
         
       </Box>
+
       <BottomNavigation
         showLabels
         value={value}

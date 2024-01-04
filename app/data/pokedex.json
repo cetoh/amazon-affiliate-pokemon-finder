@@ -31779,5 +31779,53 @@
       "thumbnail": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/thumbnails/898.png",
       "hires": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/hires/898.png"
     }
+  },
+  {
+    "id": 899,
+    "name": {
+      "english": "Wyrdeer",
+      "japanese": "アヤシシ",
+      "chinese": "?",
+      "french": "?"
+    },
+    "type": ["Normal", "Psychic"],
+    "species": "Big Horn Pokémon",
+    "description": "Wyrdeer is a snow deer-like Pokémon. Its body is mostly gray with white spots, as well as white fur on its lower legs, underside, round tail, eyebrows, and mane, the latter resembling a beard.",
+    "evolution": {},
+    "profile": {
+      "height": "1.8 m",
+      "weight": "95.1 kg",
+      "gender": "50:50",
+      "ability": [["Intimidate", "false"]]
+    },
+    "image": {
+      "sprite": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/sprites/898.png",
+      "thumbnail": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/thumbnails/898.png",
+      "hires": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/hires/898.png"
+    }
+  },
+  {
+    "id": 900,
+    "name": {
+      "english": "Kleavor",
+      "japanese": "アヤシシ",
+      "chinese": "?",
+      "french": "?"
+    },
+    "type": ["Normal", "Psychic"],
+    "species": "Big Horn Pokémon",
+    "description": "Wyrdeer is a snow deer-like Pokémon. Its body is mostly gray with white spots, as well as white fur on its lower legs, underside, round tail, eyebrows, and mane, the latter resembling a beard.",
+    "evolution": {},
+    "profile": {
+      "height": "1.8 m",
+      "weight": "95.1 kg",
+      "gender": "50:50",
+      "ability": [["Intimidate", "false"]]
+    },
+    "image": {
+      "sprite": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/sprites/898.png",
+      "thumbnail": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/thumbnails/898.png",
+      "hires": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/hires/898.png"
+    }
   }
 ]
