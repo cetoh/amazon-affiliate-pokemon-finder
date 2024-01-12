@@ -13,8 +13,7 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from '@mui/material/Typography';
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import BottomNavBar from "../components/BottomNavBar";
 import Link from "next/link";
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Avatar from "@mui/material/Avatar";
@@ -482,18 +481,8 @@ export default function Page() {
         </Grid>
         
       </Box>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        sx={{ bgcolor: 'black'}}
-      >
-        <BottomNavigationAction label="Home" href="/"/>
-        {/* <BottomNavigationAction label="Favorites" />
-        <BottomNavigationAction label="Nearby" /> */}
-      </BottomNavigation>
+      <BottomNavBar></BottomNavBar>
+      
     </div>
   );
 }
