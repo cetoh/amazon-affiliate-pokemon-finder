@@ -13,13 +13,13 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from '@mui/material/Typography';
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import BottomNavBar from "../components/BottomNavBar";
 import Link from "next/link";
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Avatar from "@mui/material/Avatar";
 
 import pokedex from '../data/pokedex.json';
+import PokemonTable, { PokemonData } from "../components/PokemonTable";
 
 const baseUrl = "https://www.amazon.com/gp/search?ie=UTF8";
 const affiliateTag = "tohtaltech-20";
@@ -134,7 +134,7 @@ function createDataArr9() {
   return rows;
 }
 
-const data1 = createDataArr1();
+const data1: PokemonData[] = createDataArr1();
 const data2 = createDataArr2();
 const data3 = createDataArr3();
 const data4 = createDataArr4();
@@ -213,268 +213,28 @@ export default function Page() {
             </Grid>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
               <TabPanel value={value} index={0}>
-                <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell>Pokemon</TableCell>
-                        <TableCell align="right">Number</TableCell>
-                        <TableCell align="right">Link</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data1.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                          <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={row.imagePath} />
-                          </TableCell>
-                          <TableCell>
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.number}</TableCell>
-                          <TableCell align="right">
-                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <PokemonTable PokemonData={data1}></PokemonTable>
               </TabPanel>
               <TabPanel value={value} index={1}>
-              <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell>Pokemon</TableCell>
-                        <TableCell align="right">Number</TableCell>
-                        <TableCell align="right">Link</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data2.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                          <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={row.imagePath} />
-                          </TableCell>
-                          <TableCell>
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.number}</TableCell>
-                          <TableCell align="right">
-                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <PokemonTable PokemonData={data2}></PokemonTable>
               </TabPanel>
               <TabPanel value={value} index={2}>
-              <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell>Pokemon</TableCell>
-                        <TableCell align="right">Number</TableCell>
-                        <TableCell align="right">Link</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data3.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                          <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={row.imagePath} />
-                          </TableCell>
-                          <TableCell>
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.number}</TableCell>
-                          <TableCell align="right">
-                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <PokemonTable PokemonData={data3}></PokemonTable>
               </TabPanel>
               <TabPanel value={value} index={3}>
-              <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell>Pokemon</TableCell>
-                        <TableCell align="right">Number</TableCell>
-                        <TableCell align="right">Link</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data4.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                          <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={row.imagePath} />
-                          </TableCell>
-                          <TableCell>
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.number}</TableCell>
-                          <TableCell align="right">
-                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <PokemonTable PokemonData={data4}></PokemonTable>
               </TabPanel>
               <TabPanel value={value} index={4}>
-              <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell>Pokemon</TableCell>
-                        <TableCell align="right">Number</TableCell>
-                        <TableCell align="right">Link</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data5.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                          <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={row.imagePath} />
-                          </TableCell>
-                          <TableCell>
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.number}</TableCell>
-                          <TableCell align="right">
-                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <PokemonTable PokemonData={data5}></PokemonTable>
               </TabPanel>
               <TabPanel value={value} index={5}>
-              <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell>Pokemon</TableCell>
-                        <TableCell align="right">Number</TableCell>
-                        <TableCell align="right">Link</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data6.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                          <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={row.imagePath} />
-                          </TableCell>
-                          <TableCell>
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.number}</TableCell>
-                          <TableCell align="right">
-                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <PokemonTable PokemonData={data6}></PokemonTable>
               </TabPanel>
               <TabPanel value={value} index={6}>
-              <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell>Pokemon</TableCell>
-                        <TableCell align="right">Number</TableCell>
-                        <TableCell align="right">Link</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data7.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                          <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={row.imagePath} />
-                          </TableCell>
-                          <TableCell>
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.number}</TableCell>
-                          <TableCell align="right">
-                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <PokemonTable PokemonData={data7}></PokemonTable>
               </TabPanel>
               <TabPanel value={value} index={7}>
-              <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell>Pokemon</TableCell>
-                        <TableCell align="right">Number</TableCell>
-                        <TableCell align="right">Link</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data8.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                          <TableCell component="th" scope="row">
-                            <Avatar alt={row.name} src={row.imagePath} />
-                          </TableCell>
-                          <TableCell>
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.number}</TableCell>
-                          <TableCell align="right">
-                            <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <PokemonTable PokemonData={data8}></PokemonTable>
               </TabPanel>
             </Grid>
           </Grid>
@@ -482,18 +242,8 @@ export default function Page() {
         </Grid>
         
       </Box>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        sx={{ bgcolor: 'black'}}
-      >
-        <BottomNavigationAction label="Home" href="/"/>
-        {/* <BottomNavigationAction label="Favorites" />
-        <BottomNavigationAction label="Nearby" /> */}
-      </BottomNavigation>
+      <BottomNavBar></BottomNavBar>
+      
     </div>
   );
 }
