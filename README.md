@@ -45,4 +45,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Dependencies
 
-- [Material UI]([https://nextjs.org/learn](https://mui.com/material-ui/getting-started/)https://mui.com/material-ui/getting-started/) 
+- [Material UI](https://mui.com/material-ui/getting-started/)

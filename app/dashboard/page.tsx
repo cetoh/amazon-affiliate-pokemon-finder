@@ -20,6 +20,7 @@ import Avatar from "@mui/material/Avatar";
 
 import pokedex from '../data/pokedex.json';
 import PokemonTable, { PokemonData } from "../components/PokemonTable";
+import SearchAppBar from "../components/SearchAppBar";
 
 const baseUrl = "https://www.amazon.com/gp/search?ie=UTF8";
 const affiliateTag = "tohtaltech-20";
@@ -186,6 +187,7 @@ export default function Page() {
 
   return (
     <div>
+      <SearchAppBar></SearchAppBar>
       <Box
         sx={{ flexGrow: 1, bgcolor: 'darkgrey', display: 'flex'}}
       >
