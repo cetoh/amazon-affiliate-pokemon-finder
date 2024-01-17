@@ -191,58 +191,48 @@ export default function Page() {
       <Box
         sx={{ flexGrow: 1, bgcolor: 'darkgrey', display: 'flex'}}
       >
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-              <Tabs
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                sx={{ borderRight: 1, borderColor: 'divider' , bgcolor: 'floralwhite'}}
-              >
-                <Tab label="Generation 1" {...a11yProps(0)} />
-                <Tab label="Generation 2" {...a11yProps(1)} />
-                <Tab label="Generation 3" {...a11yProps(2)} />
-                <Tab label="Generation 4" {...a11yProps(3)} />
-                <Tab label="Generation 5" {...a11yProps(4)} />
-                <Tab label="Generation 6" {...a11yProps(5)} />
-                <Tab label="Generation 7" {...a11yProps(6)} />
-                <Tab label="Generation 8" {...a11yProps(7)} />
-                <Tab label="Generation 9" {...a11yProps(8)} />
-              </Tabs>
-            </Grid>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-              <TabPanel value={value} index={0}>
-                <PokemonTable PokemonData={data1}></PokemonTable>
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-                <PokemonTable PokemonData={data2}></PokemonTable>
-              </TabPanel>
-              <TabPanel value={value} index={2}>
-                <PokemonTable PokemonData={data3}></PokemonTable>
-              </TabPanel>
-              <TabPanel value={value} index={3}>
-                <PokemonTable PokemonData={data4}></PokemonTable>
-              </TabPanel>
-              <TabPanel value={value} index={4}>
-                <PokemonTable PokemonData={data5}></PokemonTable>
-              </TabPanel>
-              <TabPanel value={value} index={5}>
-                <PokemonTable PokemonData={data6}></PokemonTable>
-              </TabPanel>
-              <TabPanel value={value} index={6}>
-                <PokemonTable PokemonData={data7}></PokemonTable>
-              </TabPanel>
-              <TabPanel value={value} index={7}>
-                <PokemonTable PokemonData={data8}></PokemonTable>
-              </TabPanel>
-            </Grid>
-          </Grid>
-          
-        </Grid>
-        
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs example"
+          sx={{ borderRight: 1, borderColor: 'divider' , bgcolor: 'floralwhite', maxHeight: 450}}
+        >
+          <Tab label="Generation 1" {...a11yProps(0)} />
+          <Tab label="Generation 2" {...a11yProps(1)} />
+          <Tab label="Generation 3" {...a11yProps(2)} />
+          <Tab label="Generation 4" {...a11yProps(3)} />
+          <Tab label="Generation 5" {...a11yProps(4)} />
+          <Tab label="Generation 6" {...a11yProps(5)} />
+          <Tab label="Generation 7" {...a11yProps(6)} />
+          <Tab label="Generation 8" {...a11yProps(7)} />
+          <Tab label="Generation 9" {...a11yProps(8)} />
+        </Tabs>
+        <TabPanel value={value} index={0}>
+          <PokemonTable PokemonData={data1}></PokemonTable>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <PokemonTable PokemonData={data2}></PokemonTable>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <PokemonTable PokemonData={data3}></PokemonTable>
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <PokemonTable PokemonData={data4}></PokemonTable>
+        </TabPanel>
+        <TabPanel value={value} index={4}>
+          <PokemonTable PokemonData={data5}></PokemonTable>
+        </TabPanel>
+        <TabPanel value={value} index={5}>
+          <PokemonTable PokemonData={data6}></PokemonTable>
+        </TabPanel>
+        <TabPanel value={value} index={6}>
+          <PokemonTable PokemonData={data7}></PokemonTable>
+        </TabPanel>
+        <TabPanel value={value} index={7}>
+          <PokemonTable PokemonData={data8}></PokemonTable>
+        </TabPanel>
       </Box>
       <BottomNavBar></BottomNavBar>
       
