@@ -29,9 +29,10 @@ function createData(
   name: string,
   number: number,
   link: string,
-  imagePath: string
+  imagePath: string,
+  pokemonType: string
 ) {
-  return { name, number, link, imagePath };
+  return { name, number, link, imagePath, pokemonType};
 }
 
 function paddy(num: number, padlen: number, padchar: string) {
@@ -47,17 +48,31 @@ function createImagePath(
   return path;
 }
 
+function convertPokemonTypeArray(
+  pokemonTypes: string[]
+) {
+  if (pokemonTypes.length > 1) {
+    var result = pokemonTypes[0];
+    for (let i = 1; i < pokemonTypes.length; i++) {
+      result = result + " - " + pokemonTypes[i];
+    }
+    return result;
+  } else {
+    return pokemonTypes[0];
+  }
+}
+
 function createDataArr1() {
   var rows = []
   for (var i in pokedex) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    //account for Haunter
+    //account for Haunter because apparently there's some random movie named "Haunter"
     if (pokedex[i].name.english == "Haunter")
       link = baseUrl.concat("&keywords=Pokemon+", pokedex[i].name.english, "&tag=", affiliateTag);
 
     if (pokedex[i].name.english == "Chikorita")
       break;
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id), convertPokemonTypeArray(pokedex[i].type)));
   }
   return rows;
 }
@@ -66,7 +81,7 @@ function createDataArr2() {
   var rows = []
   for (let i = 151; i < 251; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id), convertPokemonTypeArray(pokedex[i].type)));
   }
   return rows;
 }
@@ -75,7 +90,7 @@ function createDataArr3() {
   var rows = []
   for (let i = 251; i < 386; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id), convertPokemonTypeArray(pokedex[i].type)));
   }
   return rows;
 }
@@ -84,7 +99,7 @@ function createDataArr4() {
   var rows = []
   for (let i = 386; i < 493; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id),convertPokemonTypeArray(pokedex[i].type)));
   }
   return rows;
 }
@@ -93,7 +108,7 @@ function createDataArr5() {
   var rows = []
   for (let i = 493; i < 649; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id), convertPokemonTypeArray(pokedex[i].type)));
   }
   return rows;
 }
@@ -102,7 +117,7 @@ function createDataArr6() {
   var rows = []
   for (let i = 649; i < 721; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id), convertPokemonTypeArray(pokedex[i].type)));
   }
   return rows;
 }
@@ -111,7 +126,7 @@ function createDataArr7() {
   var rows = []
   for (let i = 721; i < 809; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id), convertPokemonTypeArray(pokedex[i].type)));
   }
   return rows;
 }
@@ -120,7 +135,7 @@ function createDataArr8() {
   var rows = []
   for (let i = 809; i < 898; i++) {
     var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
-    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id)));
+    rows.push(createData(pokedex[i].name.english, pokedex[i].id, link, createImagePath(pokedex[i].id), convertPokemonTypeArray(pokedex[i].type)));
   }
   return rows;
 }
@@ -131,19 +146,19 @@ function createDataArr9() {
   //   var link = baseUrl.concat("&keywords=", pokedex[i].name.english, "&tag=", affiliateTag);
   //   rows.push(createData(pokedex[i].name.english, pokedex[i].id, link));
   // }
-  rows.push("Upcoming Pokemon NOT yet Released", 1025, baseUrl.concat("&keywords=", "pokemon", "&tag=", affiliateTag));
+  rows.push(createData("Upcoming Pokemon NOT yet Released", 1025, baseUrl.concat("&keywords=", "pokemon", "&tag=", affiliateTag), "path", 'none'));
   return rows;
 }
 
 const data1: PokemonData[] = createDataArr1();
-const data2 = createDataArr2();
-const data3 = createDataArr3();
-const data4 = createDataArr4();
-const data5 = createDataArr5();
-const data6 = createDataArr6();
-const data7 = createDataArr7();
-const data8 = createDataArr8();
-const data9 = createDataArr9();
+const data2: PokemonData[] = createDataArr2();
+const data3: PokemonData[] = createDataArr3();
+const data4: PokemonData[] = createDataArr4();
+const data5: PokemonData[] = createDataArr5();
+const data6: PokemonData[] = createDataArr6();
+const data7: PokemonData[] = createDataArr7();
+const data8: PokemonData[] = createDataArr8();
+const data9: PokemonData[] = createDataArr9();
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -232,6 +247,9 @@ export default function Page() {
         </TabPanel>
         <TabPanel value={value} index={7}>
           <PokemonTable PokemonData={data8}></PokemonTable>
+        </TabPanel>
+          <TabPanel value={value} index={8}>
+          <PokemonTable PokemonData={data9}></PokemonTable>
         </TabPanel>
       </Box>
       <BottomNavBar></BottomNavBar>

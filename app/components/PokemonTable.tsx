@@ -28,7 +28,8 @@ export interface PokemonData {
     name: string,
     number: number,
     link: string,
-    imagePath: string
+    imagePath: string,
+    pokemonType: string
 }
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -80,28 +81,34 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   
   const headCells: readonly HeadCell[] = [
     {
-        id: 'name',
-        numeric: false,
-        disablePadding: true,
-        label: 'Pokemon Name',
+      id: 'name',
+      numeric: false,
+      disablePadding: true,
+      label: 'Pokemon Name',
     },
     {
-        id: 'imagePath',
-        numeric: false,
-        disablePadding: false,
-        label: 'Pokemon Picture',
+      id: 'imagePath',
+      numeric: false,
+      disablePadding: false,
+      label: 'Pokemon Picture',
     },
     {
-        id: 'number',
-        numeric: true,
-        disablePadding: false,
-        label: 'Pokemon Number',
+      id: 'number',
+      numeric: true,
+      disablePadding: false,
+      label: 'Pokemon Number',
     },
     {
-        id: 'link',
-        numeric: false,
-        disablePadding: false,
-        label: 'Link',
+      id: 'link',
+      numeric: false,
+      disablePadding: false,
+      label: 'Link',
+    },
+    {
+      id: 'pokemonType',
+      numeric: false,
+      disablePadding: false,
+      label: 'Pokemon Type',
     }
   ];
   
@@ -346,6 +353,9 @@ const PokemonTable = ({PokemonData}: {PokemonData: PokemonData[]}) => {
                     <TableCell align="right">{row.number}</TableCell>
                     <TableCell align="right">
                         <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                    </TableCell>
+                    <TableCell align="right">
+                        {row.pokemonType}
                     </TableCell>
                   </TableRow>
                 );
