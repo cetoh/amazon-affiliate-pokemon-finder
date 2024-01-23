@@ -352,7 +352,7 @@ const PokemonTable = ({PokemonData}: {PokemonData: PokemonData[]}) => {
                     </TableCell>
                     <TableCell align="right">{row.number}</TableCell>
                     <TableCell align="right">
-                        <Link href={`${row.link}`}>Top {row.name} Amazon Products</Link>
+                      <Link className='text-sky-500 hover:text-sky-600' href={`${row.link}`}>Top {row.name} Amazon Products</Link>
                     </TableCell>
                     <TableCell align="right">
                         {row.pokemonType}
